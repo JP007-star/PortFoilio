@@ -91,7 +91,7 @@ export const HeroSection: React.FC = () => {
             className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-slate-800 hover:opacity-75 transition-opacity"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            JAYA PRASAD.
+            JAYA PRASAD.M
           </a>
 
           {/* Navigation Links */}
