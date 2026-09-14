@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
+import aboutImg from '../assets/about.png';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -70,7 +71,7 @@ export const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
-          className="h-screen w-auto max-w-none object-contain origin-right scale-95 md:scale-[0.98] lg:scale-100"
+          className="h-full w-full max-w-none object-cover object-right scale-95 md:scale-[0.98] lg:scale-100"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
@@ -91,7 +92,7 @@ export const HeroSection: React.FC = () => {
             className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-slate-800 hover:opacity-75 transition-opacity"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            JAYA PRASAD.M
+            JAYA PRASAD.
           </a>
 
           {/* Navigation Links */}
@@ -140,10 +141,25 @@ export const HeroSection: React.FC = () => {
             animate="visible"
             className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[37rem] xl:max-w-[40rem] pointer-events-auto z-20"
           >
+            {/* MOBILE ONLY: Profile Image */}
+            <motion.div
+              variants={fadeUpVariants}
+              className="block md:hidden relative w-32 h-40 mb-8 mx-0"
+            >
+              <div className="absolute inset-0 border-2 border-red-400 translate-x-2 translate-y-2 rounded-sm pointer-events-none" />
+              <div className="relative w-full h-full overflow-hidden rounded-sm border border-slate-200 shadow-lg">
+                <img
+                  src={aboutImg}
+                  alt="Jaya Prasad M"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </motion.div>
+
             {/* Massive Condensed Headline */}
             <motion.div variants={fadeUpVariants} className="relative mb-3.5 select-none">
               <h1
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.2rem] xl:text-[7.8rem] tracking-tight uppercase leading-[0.83]"
+                className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.2rem] xl:text-[7.8rem] tracking-tight uppercase leading-[0.83]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
                 {/* Line 1: JAYA */}
@@ -157,7 +173,7 @@ export const HeroSection: React.FC = () => {
 
                 {/* Line 3: M. */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-red-300 via-red-200 to-red-400 drop-shadow-[0_10px_30px_rgba(248,113,113,0.3)]">
-                  
+
                 </span>
               </h1>
             </motion.div>
@@ -188,7 +204,7 @@ export const HeroSection: React.FC = () => {
             {/* CTA Buttons */}
             <motion.div
               variants={fadeUpVariants}
-              className="flex flex-row items-center gap-4 sm:gap-6"
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               {/* Explore My Work CTA */}
@@ -197,7 +213,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-slate-800 bg-slate-900 text-white hover:border-red-400 hover:bg-slate-800 text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,0,0,0.1)]"
+                className="relative inline-flex items-center justify-center space-x-3 px-6 sm:px-7 py-3.5 border border-slate-800 bg-slate-900 text-white hover:border-red-400 hover:bg-slate-800 text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,0,0,0.1)] w-full sm:w-auto"
               >
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-400/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
@@ -214,7 +230,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-slate-200 hover:border-red-400 text-slate-600 hover:text-slate-900 text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
+                className="relative inline-flex items-center justify-center space-x-2 px-6 sm:px-7 py-3.5 border border-slate-200 hover:border-red-400 text-slate-600 hover:text-slate-900 text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 w-full sm:w-auto"
               >
                 <span>DOWNLOAD RESUME</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">

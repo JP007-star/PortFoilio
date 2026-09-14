@@ -144,7 +144,7 @@ export const ProjectsSection: React.FC = () => {
           className="flex flex-col md:flex-row md:items-end justify-between mb-16"
         >
           <h2
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-700 to-slate-500 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
@@ -175,7 +175,7 @@ export const ProjectsSection: React.FC = () => {
         >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
-              <div className="relative w-full rounded-2xl border border-slate-200 bg-slate-50 p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.05)] group overflow-hidden transition-colors duration-500 hover:border-red-400">
+              <div className="relative w-full rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.05)] group overflow-hidden transition-colors duration-500 hover:border-red-400">
 
                 {/* Top Red Border Light Flare */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-red-400/80 to-transparent" />
