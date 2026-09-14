@@ -1,6 +1,6 @@
 // src/components/ExperienceSection.tsx
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 interface RouteStop {
   id: string;
@@ -13,62 +13,53 @@ interface RouteStop {
 const journey: RouteStop[] = [
   {
     id: '01',
-    year: 'MAY - JUN 2026',
-    title: 'FULL STACK & MOBILE INTERN',
-    organization: 'TECHNICAL HUB PVT LTD',
-    description: 'Engineered cross-platform mobile and responsive web applications utilizing React Native and modern full-stack workflows.',
+    year: 'MAR 2025 - PRESENT',
+    title: 'SENIOR ENGINEER',
+    organization: 'ALTIMETRIK',
+    description: 'Leading observability and AI platform operations. Reduced debugging time by 40% via Helm-deployed Grafana/Loki stack and improved deployment speed by 60% through Azure AI Jenkins pipelines.',
   },
   {
     id: '02',
-    year: '2026 MILESTONE',
-    title: 'TOP 100 NATIONAL TEAM',
-    organization: 'MYNTRA WEFORSHE HACKERRAMP',
-    description: 'Ranked among the Top 100 nationwide teams while maintaining Department Topper status (9.07 CGPA) in Data Science.',
+    year: 'NOV 2024 - MAR 2025',
+    title: 'SENIOR SOFTWARE ENGINEER',
+    organization: 'YASH TECHNOLOGIES',
+    description: 'Architected scalable backend microservices using Spring Boot and MongoDB for an automated Resume ATS Scoring system, deployed on AWS for high reliability.',
   },
   {
     id: '03',
-    year: 'MAY - JUN 2025',
-    title: 'FULL STACK TRAINEE',
-    organization: 'TECHNICAL HUB PVT LTD',
-    description: 'Trained in modern full-stack architecture, developing and deploying end-to-end interactive responsive web platforms.',
+    year: 'AUG 2021 - NOV 2024',
+    title: 'ASSOCIATE SOFTWARE ENGINEER',
+    organization: 'TORRY HARRIS INTEGRATED SOLUTION',
+    description: 'Engineered RESTful APIs and migrated legacy Java services to AWS EKS. Optimized MySQL/MongoDB schemas and managed critical JDK upgrades (8 to 17).',
   },
   {
     id: '04',
-    year: '2023 - 2027',
-    title: 'B.TECH IN DATA SCIENCE',
-    organization: 'ADITYA COLLEGE OF ENGINEERING',
-    description: 'Specializing in Machine Learning and System Design. Solved 1200+ algorithm challenges across LeetCode, CodeChef, and GeeksforGeeks.',
+    year: 'FEB 2021 - JUL 2021',
+    title: 'SOFTWARE ENGINEER TRAINEE',
+    organization: 'AVANZE TECHNOLOGIES',
+    description: 'Developed responsive user interfaces with React.js and implemented backend functionality using PHP Laravel and CodeIgniter frameworks.',
   },
   {
     id: '05',
-    year: '2021 - 2023',
-    title: 'HIGHER SECONDARY (MPC)',
-    organization: 'SRI CHAITANYA JUNIOR COLLEGE',
-    description: 'Completed specialized coursework in Mathematics, Physics, and Chemistry with 90.60% aggregate excellence.',
+    year: '2017 - 2021',
+    title: 'B.E. ELECTRICAL & ELECTRONICS',
+    organization: 'SCAD COLLEGE OF ENGINEERING',
+    description: 'Graduated with 8.22 CGPA from Anna University. Focused on core engineering principles and algorithmic problem solving.',
   },
 ];
 
 export const ExperienceSection: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start 70%', 'end 90%'],
-  });
-
-  const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-
   return (
     <section
       id="experience"
-      ref={containerRef}
-      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black pt-4 pb-24 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full bg-white text-slate-900 font-sans selection:bg-red-50 selection:text-red-600 pt-20 pb-32 px-6 sm:px-12 lg:px-20 overflow-hidden transition-colors duration-500"
     >
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-[#D4AF37]/[0.03] rounded-full blur-[150px] pointer-events-none" />
+      {/* Ambient Background Glows */}
+      <div className="absolute top-1/4 left-1/4 w-[50rem] h-[50rem] bg-slate-100 rounded-full blur-[150px] pointer-events-none opacity-50" />
+      <div className="absolute bottom-1/4 right-1/4 w-[40rem] h-[40rem] bg-red-50 rounded-full blur-[150px] pointer-events-none opacity-50" />
 
-      <div className="max-w-4xl mx-auto w-full relative z-10">
-        
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+
         {/* Eyebrow Header */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -78,12 +69,12 @@ export const ExperienceSection: React.FC = () => {
           className="flex items-center space-x-4 mb-7"
         >
           <span
-            className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
+            className="text-[11px] font-medium tracking-[0.35em] uppercase text-red-500"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             04 / EXPERIENCE
           </span>
-          <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
+          <div className="w-20 h-[1px] bg-gradient-to-r from-red-500/80 via-slate-200 to-transparent" />
         </motion.div>
 
         {/* Section Headline */}
@@ -98,84 +89,84 @@ export const ExperienceSection: React.FC = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-              EXPERIENCE &amp;
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-700 to-slate-500 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+              PROFESSIONAL
             </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
-              MILESTONES.
+            <span className="block text-transparent bg-clip-text bg-gradient-to-b from-red-500 via-red-400 to-red-600 drop-shadow-[0_8px_25px_rgba(184,134,11,0.2)]">
+              CALENDAR.
             </span>
           </h2>
         </motion.div>
 
-        {/* Minimalist Route Map */}
-        <div className="relative w-full">
-          
-          {/* Background Track */}
-          <div className="absolute left-[19px] md:left-[140px] top-4 bottom-8 w-[1px] bg-[#8C6D4F]/20" />
-          
-          {/* Animated Gold Track */}
-          <motion.div
-            style={{ height: lineHeight }}
-            className="absolute left-[19px] md:left-[140px] top-4 w-[2px] bg-gradient-to-b from-[#D4AF37] via-[#C99E5D] to-[#8C6D4F]/10 shadow-[0_0_10px_#D4AF37] origin-top"
-          />
+        {/* Calendar-Style Horizontal Journey */}
+        <div className="relative w-full overflow-x-auto pb-12 scrollbar-hide">
 
-          <div className="space-y-12">
+          <div className="flex items-start space-x-6 min-w-max px-4">
             {journey.map((stop, idx) => (
               <motion.div
                 key={stop.id}
-                initial={{ opacity: 0, x: -15 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.7, delay: idx * 0.08 }}
-                className="relative flex flex-col md:flex-row items-start group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="relative w-80 group"
               >
-                {/* Desktop Year (Left side of track) */}
-                <div className="hidden md:block w-[140px] shrink-0 pr-8 pt-0.5 text-right">
-                  <span className="text-[10px] font-mono tracking-[0.2em] text-[#8C6D4F] group-hover:text-[#D4AF37] transition-colors">
-                    {stop.year}
-                  </span>
-                </div>
+                {/* Calendar Card */}
+                <div className="relative flex flex-col h-full bg-white rounded-sm border border-slate-200 shadow-[0_10px_40px_rgba(0,0,0,0.04)] transition-all duration-500 group-hover:border-red-400 group-hover:shadow-[0_20px_50px_rgba(248,113,113,0.1)] overflow-hidden">
 
-                {/* Route Node */}
-                <div className="absolute left-[19px] md:left-[140px] top-1.5 -translate-x-1/2 flex items-center justify-center">
-                  <div className="absolute w-6 h-6 rounded-full border border-[#D4AF37]/0 group-hover:border-[#D4AF37]/40 group-hover:scale-150 transition-all duration-700 ease-out" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#120F0C] border border-[#8C6D4F] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_12px_#D4AF37] transition-colors duration-300" />
-                </div>
-
-                {/* Content (Right side of track) */}
-                <div className="ml-14 md:ml-12 pl-2">
-                  {/* Mobile Year */}
-                  <div className="md:hidden mb-1.5">
-                    <span className="text-[10px] font-mono tracking-[0.2em] text-[#D4AF37]">
-                      {stop.year}
-                    </span>
+                  {/* Calendar Header Block */}
+                  <div className="bg-slate-50 border-b border-slate-200 p-4 group-hover:bg-red-50 transition-colors duration-500 flex justify-between items-center">
+                    <div className="flex flex-col">
+                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-tighter group-hover:text-red-400 transition-colors">
+                        Timeline
+                      </span>
+                      <span className="text-sm font-bold text-slate-800 group-hover:text-red-600 transition-colors font-mono leading-none mt-1">
+                        {stop.year}
+                      </span>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-400 group-hover:text-red-500 group-hover:border-red-400 transition-all duration-500">
+                      {stop.id}
+                    </div>
                   </div>
 
-                  <h3
-                    className="text-3xl sm:text-4xl tracking-wide text-white group-hover:text-[#F7E7C4] transition-colors mb-1 leading-none"
-                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-                  >
-                    {stop.title}
-                  </h3>
-                  
-                  <span 
-                    className="block text-[10px] font-medium tracking-[0.2em] uppercase text-[#8C6D4F] mb-2"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  >
-                    {stop.organization}
-                  </span>
-                  
-                  <p 
-                    className="text-xs sm:text-[13px] font-light text-[#A8988B] leading-[1.7] max-w-lg group-hover:text-[#D5CBC0] transition-colors"
-                    style={{ fontFamily: "'Montserrat', sans-serif" }}
-                  >
-                    {stop.description}
-                  </p>
+                  {/* Card Content */}
+                  <div className="p-6 flex flex-col">
+                    <h3
+                      className="text-2xl tracking-wide text-slate-900 group-hover:text-red-600 transition-colors mb-1 leading-none"
+                      style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+                    >
+                      {stop.title}
+                    </h3>
+
+                    <div className="flex items-center space-x-2 mb-4">
+                      <div className="w-1 h-1 rounded-full bg-red-500" />
+                      <span
+                        className="text-[10px] font-medium tracking-[0.2em] uppercase text-slate-500"
+                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      >
+                        {stop.organization}
+                      </span>
+                    </div>
+
+                    <p
+                      className="text-sm font-light text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors"
+                      style={{ fontFamily: "'Montserrat', sans-serif" }}
+                    >
+                      {stop.description}
+                    </p>
+                  </div>
+
+                  {/* Calendar Footer Accent */}
+                  <div className="h-1.5 w-full bg-slate-100 group-hover:bg-red-500 transition-all duration-500" />
                 </div>
+
+                {/* Connector Line to next card (except last one) */}
+                {idx !== journey.length - 1 && (
+                  <div className="absolute top-1/2 -right-6 w-6 h-[2px] bg-slate-200 group-hover:bg-red-400 transition-colors duration-500 z-0" />
+                )}
               </motion.div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
