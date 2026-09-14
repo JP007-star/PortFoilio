@@ -1,7 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".next"
-  framework = "nextjs"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
@@ -10,8 +9,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[headers]]
-  for = "/_next/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
