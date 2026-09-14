@@ -1,222 +1,138 @@
-export const personalInfo = {
-  name: "Jaya Prasad M",
-  title: "Java Developer",
-  email: "jayaprasad.jp.m@gmail.com",
-  phone: "+91-9080059962",
-  location: "Tirunelveli, Tamil Nadu, India",
-  address: "Tirunelveli, Tamil Nadu, India",
-  linkedin: "https://linkedin.com/in/jayaprasad",
-  github: "https://github.com/JP007-star",
-  resumeUrl: "https://drive.google.com/drive/folders/1DkGQLQz1r0o01-XTygWKVD-KlAXBmC2S",
+export const portfolioData = {
+  profile: {
+    name: 'JAYA PRASAD M',
+    role: 'FULL STACK JAVA AI ENGINEER',
+    summary: "I'm Jaya Prasad M, a Senior Java Developer and AI Platform Engineer with over 5+ years of experience. I specialize in building scalable full-stack architectures, automating cloud infrastructure, and implementing advanced observability systems for AI-enabled platforms. My goal is to ensure high availability and reliability for the next generation of distributed AI services.",
+    metrics: [
+      { label: 'Years Exp', value: '5+' },
+      { label: 'B.Tech CGPA', value: '8.22' },
+      { label: 'MICROSERVICES', value: '10 +' },
+      { label: 'GEN AI CERTIFIED', value: 'GCP & ORACLE' },
+    ],
+  },
+  experience: [
+    {
+      id: '01',
+      year: 'MAR 2025 - PRESENT',
+      title: 'SENIOR ENGINEER',
+      organization: 'ALTIMETRIK',
+      description: 'Leading observability and AI platform operations. Reduced debugging time by 40% via Helm-deployed Grafana/Loki stack and improved deployment speed by 60% through Azure AI Jenkins pipelines.',
+    },
+    {
+      id: '02',
+      year: 'NOV 2024 - MAR 2025',
+      title: 'SENIOR SOFTWARE ENGINEER',
+      organization: 'YASH TECHNOLOGIES',
+      description: 'Architected scalable backend microservices using Spring Boot and MongoDB for an automated Resume ATS Scoring system, deployed on AWS for high reliability.',
+    },
+    {
+      id: '03',
+      year: 'AUG 2021 - NOV 2024',
+      title: 'ASSOCIATE SOFTWARE ENGINEER',
+      organization: 'TORRY HARRIS INTEGRATED SOLUTION',
+      description: 'Engineered RESTful APIs and migrated legacy Java services to AWS EKS. Optimized MySQL/MongoDB schemas and managed critical JDK upgrades (8 to 17).',
+    },
+    {
+      id: '04',
+      year: 'FEB 2021 - JUL 2021',
+      title: 'SOFTWARE ENGINEER TRAINEE',
+      organization: 'AVANZE TECHNOLOGIES',
+      description: 'Developed responsive user interfaces with React.js and implemented backend functionality using PHP Laravel and CodeIgniter frameworks.',
+    },
+    {
+      id: '05',
+      year: '2017 - 2021',
+      title: 'B.E. ELECTRICAL & ELECTRONICS',
+      organization: 'SCAD COLLEGE OF ENGINEERING',
+      description: 'Graduated with 8.22 CGPA from Anna University. Focused on core engineering principles and algorithmic problem solving.',
+    },
+  ],
+  projects: [
+    {
+      number: '01',
+      title: 'PDF RAG Chatbot',
+      category: 'AI / LLM INFRASTRUCTURE',
+      description: 'An end-to-end Retrieval-Augmented Generation system. Implements document chunking and embedding via Sentence Transformers, vector storage in FAISS, and Llama3 (Ollama) for context-aware response generation.',
+      githubUrl: 'https://github.com/JP007-star/pdf-rag-chatbot',
+      tech: ['Python', 'FastAPI', 'FAISS', 'Sentence-Transformers', 'Llama3', 'Ollama', 'RAG', 'Vector DB'],
+      metrics: [
+        { label: 'MODEL', value: 'Llama3' },
+        { label: 'STORAGE', value: 'FAISS' },
+        { label: 'RETRIEVAL', value: 'Similarity Search' },
+      ],
+    },
+    {
+      number: '02',
+      title: 'End-to-End MLOps Pipeline',
+      category: 'MLOps / CLOUD PLATFORM',
+      description: 'A comprehensive ML lifecycle pipeline covering preprocessing, training, and deployment. Utilizes Docker for containerization and Kubernetes for scalable production deployment with multi-cloud integration.',
+      githubUrl: 'https://github.com/JP007-star/ml_ops_project',
+      tech: ['Python', 'Pandas', 'Scikit-learn', 'Docker', 'Kubernetes', 'AWS', 'GCP', 'Azure', 'CI/CD'],
+      metrics: [
+        { label: 'DEPLOY', value: 'Kubernetes' },
+        { label: 'CLOUD', value: 'Multi-Cloud' },
+        { label: 'MONITOR', value: 'Data Drift' },
+      ],
+    },
+    {
+      number: '03',
+      title: 'Docusign Integration Microservice',
+      category: 'ENTERPRISE / FINTECH',
+      description: 'Developed a from-scratch integration microservice for automated document processing, reducing manual effort by 50%. Implemented advanced observability using Prometheus, Grafana, and Loki.',
+      githubUrl: 'https://github.com/JP007-star',
+      tech: ['Java', 'Spring Boot', 'Helm', 'Grafana', 'Loki', 'Prometheus', 'Zipkin', 'REST API'],
+      metrics: [
+        { label: 'EFFORT', value: '-50% Manual' },
+        { label: 'DEBUG', value: '-40% Time' },
+        { label: 'STACK', value: 'Observability' },
+      ],
+    },
+    {
+      number: '04',
+      title: 'Resume ATS Scoring Platform',
+      category: 'AI / HR-TECH',
+      description: 'Designed and developed scalable backend microservices for calculating resume ATS scores. Built with Spring Boot and MongoDB, deployed on AWS for high availability and horizontal scalability.',
+      githubUrl: 'https://github.com/JP007-star',
+      tech: ['Spring Boot', 'AWS (EC2, S3, RDS)', 'MongoDB', 'Java', 'Microservices', 'REST API'],
+      metrics: [
+        { label: 'DATABASE', value: 'MongoDB' },
+        { label: 'CLOUD', value: 'AWS' },
+        { label: 'ARCH', value: 'Microservices' },
+      ],
+    },
+  ],
+  skills: [
+    {
+      title: 'FULL STACK ARCHITECTURE',
+      badge: 'CORE PILLAR',
+      items: ['Java', 'Spring Boot', 'React.js', 'Node.js', 'FastAPI'],
+      description: 'Architecting scalable microservices and responsive frontends. Expert in building RESTful APIs with strong emphasis on design patterns and modularity.',
+      stat: 'SCALABLE SYSTEMS',
+      colSpan: 'lg:col-span-7',
+    },
+    {
+      title: 'DEVOPS & INFRASTRUCTURE',
+      badge: 'CLOUD NATIVE',
+      items: ['Kubernetes', 'Docker', 'Helm', 'AWS', 'GCP', 'Azure'],
+      description: 'Orchestrating containerized workloads and automating CI/CD pipelines. Proficient in AWS (EKS, S3, EC2) and Azure cloud operations.',
+      stat: 'K8s ORCHESTRATION',
+      colSpan: 'lg:col-span-5',
+    },
+    {
+      title: 'OBSERVABILITY & AI OPS',
+      badge: 'RELIABILITY',
+      items: ['Prometheus', 'Grafana', 'Loki', 'Promtail', 'Zipkin', 'Graylog'],
+      description: 'Implementing full-stack monitoring for AI systems. Reducing MTTR and debugging time through advanced logging, tracing, and anomaly detection.',
+      stat: 'MTTR REDUCTION',
+      colSpan: 'lg:col-span-5',
+    },
+    {
+      title: 'AI & DATA ENGINEERING',
+      badge: 'INTELLIGENCE',
+      items: ['Python', 'Bash', 'MySQL', 'MongoDB', 'FAISS', 'Sentence-Transformers'],
+      description: 'Building RAG systems and MLOps pipelines. Expert in vector databases, embedding models, and automated AI model deployment.',
+      stat: 'RAG & MLOps',
+      colSpan: 'lg:col-span-7',
+    },
+  ],
 };
-
-export const bio = {
-  short: "Java Developer with 5+ years of experience in building scalable, cloud-native applications using Java, Spring Boot, React.js, and GCP.",
-  full: "Dedicated and results-driven Java Developer with 5+ years of comprehensive experience in designing, developing, and deploying enterprise-grade applications. Proficient in microservices architecture, RESTful API development, frontend performance optimization, and cloud deployments. Demonstrated success in delivering high-impact solutions, enhancing system performance, and automating complex business workflows. Adept at collaborating with cross-functional teams to achieve project objectives and drive organizational growth.",
-  yearsOfExperience: 5,
-};
-
-export const skills = {
-  languages: [
-    { name: "Java 8 / 11 / 17 / 21 (LTS)", level: 95 },
-    { name: "JavaScript", level: 85 },
-  ],
-  frameworks: [
-    { name: "Spring Boot 3.x", level: 95 },
-    { name: "React.js 18.x", level: 85 },
-  ],
-  databases: [
-    { name: "MySQL 8.x", level: 85 },
-    { name: "MongoDB 7.x", level: 90 },
-  ],
-  devops: [
-    { name: "Docker", level: 90 },
-    { name: "Kubernetes", level: 85 },
-    { name: "Helm", level: 80 },
-    { name: "GitLab CI/CD", level: 85 },
-    { name: "Git / GitHub", level: 85 },
-  ],
-  cloud: [
-    { name: "GCP", level: 85 },
-    { name: "AWS", level: 85 },
-  ],
-  toolsAndPractices: [
-    { name: "IntelliJ IDEA", level: 85 },
-    { name: "VS Code", level: 85 },
-    { name: "Linux", level: 80 },
-    { name: "Agile / Scrum", level: 85 },
-    { name: "Confluence (Wiki Integration)", level: 80 },
-  ],
-};
-
-export const experience = [
-  {
-    id: 1,
-    role: "Senior Engineer",
-    company: "Altimetrik",
-    location: "Bengaluru",
-    period: "Mar 2025 - Present",
-    description:
-      "Project: Lending Platform | Calibo. Designed and developed a DocuSign integration microservice from scratch using Java and Spring Boot, automating document workflows and reducing manual processing effort by 50%. Developed and maintained scalable React.js applications using functional components and hooks (useState, useEffect), optimizing component re-rendering for frontend performance. Built and consumed RESTful APIs enabling communication between React frontends and Spring Boot microservices. Configured MongoDB replica set with automatic failover, improving application uptime and fault tolerance. Implemented data persistence using Spring Data JPA, designing entity models, repositories, and relationships. Worked on cloud-native deployments across GCP and AWS.",
-    achievements: [
-      "DocuSign Integration - 50% reduction in manual processing",
-      "MongoDB Replica Set with Automatic Failover",
-      "RESTful API Development Across 6 Microservices",
-      "Frontend Performance Optimization (React.js)",
-    ],
-  },
-  {
-    id: 2,
-    role: "Senior Software Engineer",
-    company: "Yash Technologies",
-    location: "Bengaluru",
-    period: "Nov 2024 - Mar 2025",
-    description:
-      "Project: ATS Internal App. Designed and developed a Resume ATS Scoring Platform using Spring Boot microservices to evaluate resumes based on predefined scoring criteria, with a React-based frontend for input capture and score display. Integrated the Google Gemini API to analyze resume content and generate contextual relevance scores, improving accuracy and consistency of ATS evaluations. Owned end-to-end system design, including API contracts, service boundaries, data models, and error-handling strategies. Deployed on AWS with MongoDB as the primary database.",
-    achievements: [
-      "Resume ATS Scoring Platform (Spring Boot + React)",
-      "Google Gemini API Integration",
-      "AWS Deployment with MongoDB",
-    ],
-  },
-  {
-    id: 3,
-    role: "Associate Software Engineer",
-    company: "Torry Harris Integrated Solution",
-    location: "Bengaluru",
-    period: "Aug 2021 - Nov 2024",
-    description:
-      "Project: API Catalogue | BT Group. Designed and implemented RESTful APIs for seamless communication between frontend and backend components. Collaborated with development teams to design appropriate React Redux data flow and state management strategies. Utilized Spring Boot framework for efficient and scalable backend development, migrated Java REST API to AWS cloud using EKS and other AWS web services. Created and optimized database schemas and queries for MySQL and MongoDB, worked with Kafka. Managed migration and upgradation of Java Development Kit (JDK) versions from JDK 8 to JDK 11 and JDK 17.",
-    achievements: [
-      "RESTful API Development",
-      "AWS EKS Migration",
-      "JDK Upgradation (8 → 11 → 17)",
-      "30% System Performance Improvement",
-      "25% Cloud Infrastructure Cost Reduction",
-    ],
-  },
-  {
-    id: 4,
-    role: "Software Engineer Trainee",
-    company: "Avanze Technologies",
-    location: "Salem",
-    period: "Feb 2021 - Jul 2021",
-    description:
-      "Project: MortgageSats | Firstsource. Designed and implemented RESTful APIs and backend functionality using PHP frameworks such as Laravel and CodeIgniter. Created responsive and intuitive user interfaces using React.js, HTML5, CSS3, and related frontend technologies.",
-    achievements: [
-      "PHP/Laravel Backend Development",
-      "React.js Frontend Components",
-    ],
-  },
-];
-
-export const projects = [
-  {
-    id: 1,
-    title: "PDF RAG Chatbot",
-    description:
-      "Built an end-to-end RAG (Retrieval-Augmented Generation) system where documents are chunked, embedded using Sentence Transformers, stored in FAISS, and retrieved using similarity search. Integrated retrieved content with Llama3 (Ollama) and exposed the service using FastAPI.",
-    techStack: ["Python", "FastAPI", "FAISS", "Sentence-Transformers", "Llama3", "Ollama"],
-    link: "https://github.com/JP007-star/pdf-rag-chatbot",
-    year: "2026",
-  },
-  {
-    id: 2,
-    title: "End-to-End MLOps Pipeline",
-    description:
-      "Built an end-to-end MLOps pipeline covering data preprocessing, model training, evaluation, deployment, and monitoring. Implemented Docker-based containerization, version control using Git, and deployed ML models using Kubernetes. Integrated cloud platforms (AWS/GCP/Azure) for scalable production deployment.",
-    techStack: ["Python", "Docker", "Kubernetes", "ML Pipelines", "AWS", "GCP", "Azure"],
-    link: "https://github.com/JP007-star/ml_ops_project",
-    year: "2026",
-  },
-  {
-    id: 3,
-    title: "Restaurant Application",
-    description:
-      "Developed Spring Boot Java Application and setup CI/CD pipeline using Jenkins, Ansible and demonstrated DevOps infrastructure using Docker, Kubernetes in AWS cloud.",
-    techStack: ["Spring Boot", "Jenkins", "Ansible", "Docker", "Kubernetes", "AWS"],
-    link: "https://github.com/JP007-star/RestaurantApp.git",
-    year: "2022",
-  },
-  {
-    id: 4,
-    title: "Train Ticket Reservation System",
-    description:
-      "Developed a Spring Boot Java Application with Thymeleaf for rendering the frontend. Application is used to reserve and generate tickets for train journeys.",
-    techStack: ["Spring Boot", "Thymeleaf", "Java"],
-    link: "https://github.com/JP007-star/TrainTicketReservation.git",
-    year: "2021",
-  },
-  {
-    id: 5,
-    title: "Home Automation (IOT)",
-    description:
-      "RealTime IOT Project with NodeMCU and RealTime Database in Firebase for Controlling Home Appliance with Flutter Hybrid Mobile App.",
-    techStack: ["Flutter", "Firebase", "NodeMCU", "IOT"],
-    link: "https://github.com/JP007-star/IOT-HOME.git",
-    year: "2021",
-  },
-];
-
-export const education = [
-  {
-    id: 1,
-    degree: "Bachelor of Engineering in Electrical and Electronics Engineering",
-    institution: "SCAD College of Engineering and Technology",
-    period: "2017-2021",
-    details: "Affiliated to Anna University - CGPA: 8.22",
-  },
-];
-
-export const awards = [
-  {
-    id: 1,
-    title: "Rise and Shine Award",
-    organization: "Altimetrik",
-    year: "2025",
-    description: "Recognition for outstanding performance.",
-  },
-  {
-    id: 2,
-    title: "Team Excellence Award",
-    organization: "Torry Harris Integrated Solution",
-    year: "2024",
-    description: "Recognition for team excellence.",
-  },
-  {
-    id: 3,
-    title: "Team Excellence Award",
-    organization: "Torry Harris Integrated Solution",
-    year: "2023",
-    description: "Recognition for team excellence.",
-  },
-  {
-    id: 4,
-    title: "Rookie of the Quarter",
-    organization: "Torry Harris Integrated Solution",
-    year: "2023",
-    description: "Recognition as Rookie of the Quarter.",
-  },
-  {
-    id: 5,
-    title: "Green Belt Lean Six Sigma",
-    organization: "MSME",
-    year: "2020",
-    description: "Completed GREEN BELT LEAN SIX SIGMA certification program.",
-  },
-];
-
-export const certifications = [
-  {
-    id: 1,
-    title: "Google Cloud Certified – Associate Cloud Engineer",
-    organization: "Google Cloud",
-    year: "2025",
-  },
-  {
-    id: 2,
-    title: "Oracle Gen AI Professional",
-    organization: "Oracle",
-    year: "2025",
-  },
-];

@@ -1,0 +1,271 @@
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.16,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 18, filter: 'blur(6px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 1.1,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+const navItems = [
+  { name: 'ABOUT', href: '#about' },
+  { name: 'PROJECTS', href: '#work' },
+  { name: 'SKILLS', href: '#skills' },
+  { name: 'EXPERIENCE', href: '#experience' },
+  { name: 'CONTACT', href: '#contact' },
+];
+
+export const HeroSection: React.FC = () => {
+  const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setCursorPos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  return (
+    <section className="relative w-screen h-screen overflow-hidden bg-white text-slate-900 font-sans selection:bg-red-50 selection:text-red-600 cursor-none transition-colors duration-500">
+      {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
+      {cursorPos.x >= 0 && (
+        <motion.div
+          className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-red-400/40 flex items-center justify-center backdrop-blur-[1px]"
+          animate={{
+            x: cursorPos.x - (isHovered ? 24 : 5),
+            y: cursorPos.y - (isHovered ? 24 : 5),
+            width: isHovered ? 48 : 10,
+            height: isHovered ? 48 : 10,
+            backgroundColor: isHovered ? 'rgba(248,113,113,0.1)' : 'rgba(248,113,113,0.95)',
+          }}
+          transition={{ type: 'spring', damping: 30, stiffness: 350, mass: 0.5 }}
+        />
+      )}
+
+      {/* ================= 2. FIXED VIDEO LAYER ================= */}
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-white flex items-center justify-end">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-screen w-auto max-w-none object-contain origin-right scale-95 md:scale-[0.98] lg:scale-100"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+
+        {/* Seamless Soft Left Edge Blend */}
+        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-white via-white/85 to-transparent pointer-events-none" />
+      </div>
+
+      {/* ================= 3. CONTENT LAYER ================= */}
+      <div className="relative z-10 flex flex-col justify-between h-full w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
+
+        {/* Navigation Bar */}
+        <header className="relative flex items-center justify-between w-full pointer-events-auto">
+          <a
+            href="#"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-slate-800 hover:opacity-75 transition-opacity"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            JAYA PRASAD.
+          </a>
+
+          {/* Navigation Links */}
+          <nav
+            className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] tracking-[0.28em] font-light uppercase text-slate-500 absolute left-1/2 -translate-x-1/2"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="relative group py-1 transition-colors duration-300 hover:text-slate-900"
+              >
+                {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-red-400/50 transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
+          </nav>
+
+          {/* Right Actions */}
+          <div className="flex items-center space-x-4 ml-auto md:ml-0">
+            <a
+              href="#contact"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-slate-200 hover:border-red-400 text-slate-700 hover:text-slate-900 transition-all duration-300 backdrop-blur-sm"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              <span>LET&apos;S TALK</span>
+              <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-xs">
+                ↗
+              </span>
+            </a>
+          </div>
+        </header>
+
+        {/* Main Hero Row */}
+        <div className="relative flex flex-col md:flex-row items-center justify-between w-full pt-4 pb-2 my-auto">
+
+          {/* LEFT: Balanced Headline & Actions */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[37rem] xl:max-w-[40rem] pointer-events-auto z-20"
+          >
+            {/* Massive Condensed Headline */}
+            <motion.div variants={fadeUpVariants} className="relative mb-3.5 select-none">
+              <h1
+                className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.2rem] xl:text-[7.8rem] tracking-tight uppercase leading-[0.83]"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+              >
+                {/* Line 1: JAYA */}
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-red-500 to-red-700 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+                  JAYA PRASAD M
+                </span>
+
+                {/* Line 2: PRASAD */}
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-red-400 via-red-300 to-red-500 drop-shadow-[0_8px_25px_rgba(248,113,113,0.2)]">
+                </span>
+
+                {/* Line 3: M. */}
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-red-300 via-red-200 to-red-400 drop-shadow-[0_10px_30px_rgba(248,113,113,0.3)]">
+                  
+                </span>
+              </h1>
+            </motion.div>
+
+            {/* Subtitle Technologies */}
+            <motion.div variants={fadeUpVariants} className="mb-4">
+              <p
+                className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-slate-500"
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
+              >
+                FULL STACK JAVA AI ENGINEER
+              </p>
+            </motion.div>
+
+            {/* Professional Summary Description */}
+            <motion.div
+              variants={fadeUpVariants}
+              className="text-xs sm:text-sm md:text-[13.5px] font-light text-slate-600 leading-[1.8] tracking-wide max-w-lg mb-6 space-y-1"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              <p>
+                I&apos;m Jaya Prasad M, a Senior Java Developer and AI Platform Engineer with over 5+ years of experience.
+                I specialize in building scalable full-stack architectures, automating cloud infrastructure, and implementing advanced observability systems for AI-enabled platforms.
+                My goal is to ensure high availability and reliability for the next generation of distributed AI services.
+              </p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              variants={fadeUpVariants}
+              className="flex flex-row items-center gap-4 sm:gap-6"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              {/* Explore My Work CTA */}
+              <motion.a
+                href="#work"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                whileHover={{ scale: 1.02 }}
+                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-slate-800 bg-slate-900 text-white hover:border-red-400 hover:bg-slate-800 text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,0,0,0.1)]"
+              >
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-400/40 to-transparent pointer-events-none" />
+                <span>EXPLORE MY WORK</span>
+                <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-xs">
+                  ↗
+                </span>
+              </motion.a>
+
+              {/* Download Resume Button */}
+              <motion.a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                whileHover={{ scale: 1.02 }}
+                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-slate-200 hover:border-red-400 text-slate-600 hover:text-slate-900 text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
+              >
+                <span>DOWNLOAD RESUME</span>
+                <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
+                  ↓
+                </span>
+              </motion.a>
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT: Floating Quote & Signature Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden lg:flex flex-col items-start pointer-events-auto pr-24 xl:pr-36 mr-4 z-20 select-none"
+          >
+            {/* 1. Quote Mark */}
+            <span className="text-xl text-red-400 leading-none font-serif mb-2">
+              “
+            </span>
+
+            {/* 2. Compact Two-Line Statement */}
+            <div
+              className="text-[9.5px] font-medium tracking-[0.24em] uppercase text-slate-700 space-y-1 mb-3"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              <p>CODE IS MY CRAFT.</p>
+              <p>IMPACT IS MY GOAL.</p>
+            </div>
+
+            {/* 3. Red Accent Line */}
+            <div className="w-28 h-[1px] bg-gradient-to-r from-red-400 via-slate-300/70 to-transparent shadow-[0_0_8px_rgba(248,113,113,0.4)] mb-2" />
+
+            {/* 4. Fine Monoline Calligraphy Signature */}
+            <div
+              className="text-[2.2rem] text-red-400 font-normal leading-none -ml-0.5"
+              style={{
+                fontFamily: "'Herr Von Muellerhoff', 'Allura', cursive",
+                letterSpacing: '0.04em',
+              }}
+            >
+              Jaya Prasad
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom Spacer */}
+        <div className="h-2" />
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
