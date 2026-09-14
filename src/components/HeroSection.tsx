@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
+import aboutImg from '../assets/about.png';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -140,6 +141,21 @@ export const HeroSection: React.FC = () => {
             animate="visible"
             className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-[37rem] xl:max-w-[40rem] pointer-events-auto z-20"
           >
+            {/* MOBILE ONLY: Profile Image */}
+            <motion.div
+              variants={fadeUpVariants}
+              className="block md:hidden relative w-32 h-40 mb-8 mx-0"
+            >
+              <div className="absolute inset-0 border-2 border-red-400 translate-x-2 translate-y-2 rounded-sm pointer-events-none" />
+              <div className="relative w-full h-full overflow-hidden rounded-sm border border-slate-200 shadow-lg">
+                <img
+                  src={aboutImg}
+                  alt="Jaya Prasad M"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </motion.div>
+
             {/* Massive Condensed Headline */}
             <motion.div variants={fadeUpVariants} className="relative mb-3.5 select-none">
               <h1
