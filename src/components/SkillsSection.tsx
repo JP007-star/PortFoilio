@@ -101,7 +101,7 @@ export const SkillsSection: React.FC = () => {
           className="mb-10"
         >
           <h2
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase leading-[0.85] select-none"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-700 to-slate-500 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
@@ -128,7 +128,7 @@ export const SkillsSection: React.FC = () => {
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
               whileHover={{ y: -5, transition: { duration: 0.25 } }}
-              className={`${block.colSpan} relative p-8 sm:p-9 rounded-sm border border-slate-200 bg-slate-50/85 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-red-400/80 hover:shadow-[0_16px_45px_rgba(0,0,0,0.05)] cursor-pointer group`}
+              className={`${block.colSpan} relative p-6 sm:p-9 rounded-sm border border-slate-200 bg-slate-50/85 backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-red-400/80 hover:shadow-[0_16px_45px_rgba(0,0,0,0.05)] cursor-pointer group`}
             >
               {/* Top Subtle Border Highlight */}
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-red-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

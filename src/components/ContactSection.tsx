@@ -50,7 +50,7 @@ export const ContactSection: React.FC = () => {
                 className="mb-8"
               >
                 <h2
-                  className="text-5xl sm:text-6xl md:text-7xl tracking-tight uppercase leading-[0.85] select-none"
+                  className="text-4xl sm:text-6xl md:text-7xl tracking-tight uppercase leading-[0.85] select-none"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   <span className="block text-transparent bg-clip-text bg-gradient-to-b from-slate-900 via-slate-700 to-slate-500 drop-shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
@@ -77,7 +77,7 @@ export const ContactSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-7 relative w-full rounded-sm border border-slate-200 bg-slate-50 p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden"
+            className="lg:col-span-7 relative w-full rounded-sm border border-slate-200 bg-slate-50 p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden"
           >
             {/* Top Red Horizon Edge */}
             <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-red-400/70 to-transparent" />
